@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title desc">
+  <title id="title">Quán cà phê Neon Brew</title>
+  <desc id="desc">Không gian quán cà phê Việt ấm áp với quầy gỗ và cửa sổ nắng.</desc>
+  <defs>
+    <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#f6dfb7"/><stop offset="1" stop-color="#eec99c"/></linearGradient>
+    <linearGradient id="window" x2="0" y2="1"><stop stop-color="#c7d6c2"/><stop offset="1" stop-color="#e8d3a9"/></linearGradient>
+    <linearGradient id="counter" x2="0" y2="1"><stop stop-color="#966042"/><stop offset="1" stop-color="#68402f"/></linearGradient>
+    <pattern id="floor" width="46" height="28" patternUnits="userSpaceOnUse"><path d="M0 0h46M23 0v28" fill="none" stroke="#b78965" stroke-opacity=".35" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="720" height="400" fill="url(#wall)"/>
+  <path d="M0 0h720v33H0z" fill="#704635"/>
+  <rect x="54" y="62" width="232" height="178" rx="7" fill="#845740"/>
+  <rect x="64" y="72" width="212" height="158" rx="2" fill="url(#window)"/>
+  <path d="M65 187q57-52 103-13t108-15v72H65z" fill="#92a985"/>
+  <path d="M65 205q69-33 120-3t91-9v37H65z" fill="#728b70"/>
+  <path d="M167 73v156M65 152h210" stroke="#845740" stroke-width="8"/>
+  <path d="M80 78l88 0 0 150" fill="#fff3d8" opacity=".2"/>
+  <rect x="339" y="61" width="318" height="132" rx="7" fill="#e5c18e"/>
+  <path d="M354 77h289v5H354z" fill="#a97b4f"/>
+  <rect x="362" y="88" width="77" height="88" rx="3" fill="#c79b68"/>
+  <rect x="454" y="88" width="77" height="88" rx="3" fill="#c79b68"/>
+  <rect x="546" y="88" width="95" height="88" rx="3" fill="#c79b68"/>
+  <path d="M374 155q18-49 35-2q12-42 23-1" fill="none" stroke="#547252" stroke-width="5" stroke-linecap="round"/>
+  <path d="M468 151q13-43 27-1q14-48 25 1" fill="none" stroke="#728056" stroke-width="5" stroke-linecap="round"/>
+  <path d="M566 152q20-45 36-2q14-43 27 0" fill="none" stroke="#547252" stroke-width="5" stroke-linecap="round"/>
+  <path d="M390 92v35m103-35v35m77-35v35" stroke="#eddfc6" stroke-width="2"/>
+  <path d="M0 247h720v153H0z" fill="#d8b58d"/>
+  <path d="M0 247h720v153H0z" fill="url(#floor)"/>
+  <path d="M0 242h720v14H0z" fill="#9e6c4b"/>
+  <rect x="302" y="179" width="348" height="131" rx="7" fill="url(#counter)"/>
+  <path d="M289 177h377v26H289z" rx="6" fill="#b88053"/>
+  <path d="M303 215h348" stroke="#c28a5e" stroke-opacity=".45" stroke-width="3"/>
+  <rect x="337" y="138" width="76" height="48" rx="8" fill="#536a52"/>
+  <rect x="348" y="148" width="54" height="9" rx="4" fill="#f1d8a8"/>
+  <circle cx="375" cy="169" r="9" fill="#d9a556"/>
+  <path d="M442 161h40v14h-40z" fill="#efe5ce"/><path d="M451 161v-10q10-8 20 0v10" fill="none" stroke="#79543c" stroke-width="4"/>
+  <rect x="517" y="143" width="57" height="43" rx="4" fill="#617a61"/>
+  <path d="M526 153h39v21h-39z" fill="#e6d2ad"/><circle cx="545" cy="164" r="7" fill="#a96845"/>
+  <path d="M61 305h124v11H61z" fill="#81573e"/><path d="M74 315v57m98-57v57" stroke="#81573e" stroke-width="8"/>
+  <path d="M35 303h176v-10q-88-22-176 0z" fill="#ba875a"/>
+  <path d="M214 331h78v8h-78z" fill="#9e6c4b"/><path d="M222 339v34m62-34v34" stroke="#9e6c4b" stroke-width="6"/>
+  <path d="M256 326v-56" stroke="#8a5f40" stroke-width="5"/><path d="M237 272q19-25 38 0z" fill="#d5a856"/>
+  <circle cx="256" cy="268" r="4" fill="#fff3cf"/>
+  <path d="M612 295h76v8h-76z" fill="#9e6c4b"/><path d="M619 303v38m62-38v38" stroke="#9e6c4b" stroke-width="6"/>
+  <path d="M591 289q59-19 117 0v9H591z" fill="#bc895e"/>
+  <path d="M40 269q20-37 40 0m-29-4q13-45 27 0m-16-1q9-33 18 0" fill="none" stroke="#557151" stroke-width="6" stroke-linecap="round"/>
+  <path d="M24 272h55l-6 30H30z" fill="#b9644b"/>
+  <path d="M681 258q-18-31-36 0m27-7q-11-37-22 0" fill="none" stroke="#557151" stroke-width="5" stroke-linecap="round"/>
+  <path d="M637 260h49l-6 31h-37z" fill="#d2a956"/>
+  <path d="M290 206l-81 72" stroke="#fff2cf" stroke-opacity=".13" stroke-width="32"/>
+</svg>

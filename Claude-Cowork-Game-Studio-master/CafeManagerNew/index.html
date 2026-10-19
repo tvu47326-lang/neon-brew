@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Neon Brew, game quản lý một quán cà phê Việt Nam ấm áp.">
+  <title>Neon Brew — Quán nhỏ, ngày vui</title>
+  <link rel="icon" href="assets/cafe-interior.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div id="boot-screen" class="boot-screen" role="status" aria-label="Đang chuẩn bị Neon Brew">
+    <img src="assets/neon-brew-logo.svg" alt="Neon Brew">
+    <div class="boot-progress" aria-hidden="true"><span></span></div>
+    <p>ĐANG MỞ CỬA QUÁN</p>
+  </div>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#game" aria-label="Neon Brew, màn chơi">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span><strong>neon brew</strong><small>QUÁN NHỎ, NGÀY VUI</small></span>
+      </a>
+      <div class="day-chip"><span class="sun-dot" aria-hidden="true"></span><span id="day-label">Ngày 1</span></div>
+      <button class="icon-button" id="pause-button" type="button" aria-label="Tạm dừng và cài đặt" title="Tạm dừng">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+      </button>
+    </header>
+
+    <main id="game" class="game-content" aria-live="off">
+      <section class="resource-strip" aria-label="Thông tin ca làm">
+        <div class="resource money-resource"><span class="resource-icon">₫</span><div><small>TIỀN MẶT</small><strong id="cash-value">—</strong></div></div>
+        <div class="resource clock-resource"><span class="resource-icon clock-icon" aria-hidden="true">◷</span><div><small>CA CÒN</small><strong id="time-value">—</strong></div></div>
+        <div class="resource rating-resource"><span class="resource-icon star-icon" aria-hidden="true">✳</span><div><small>YÊU THÍCH</small><strong id="rating-value">—</strong></div></div>
+      </section>
+
+      <section class="quest-strip" aria-label="Nhiệm vụ hôm nay">
+        <div class="quest-copy"><span class="quest-kicker">VIỆC HÔM NAY</span><strong id="quest-label">Phục vụ khách thật vui</strong></div>
+        <div class="quest-progress"><div class="progress-track"><span id="quest-progress-bar"></span></div><small id="quest-progress-label">0 / 5</small></div>
+        <span class="quest-stamp" aria-hidden="true">✦</span>
+      </section>
+
+      <section class="cafe-panel" aria-label="Bên trong quán">
+        <div class="panel-heading scene-heading"><div><span class="eyebrow">GÓC PHỐ NHỎ</span><h1>Quán mình hôm nay</h1></div><span class="open-sign"><i></i> ĐANG MỞ</span></div>
+        <div class="cafe-scene">
+          <img class="scene-art" src="assets/cafe-interior.svg" alt="Quán cà phê ấm áp, nắng chiếu qua cửa sổ và quầy pha chế gỗ" draggable="false">
+          <div class="scene-caption"><span>☀</span> Nắng đẹp, khách ghé đều</div>
+          <span class="steam steam-one" aria-hidden="true"></span><span class="steam steam-two" aria-hidden="true"></span>
+        </div>
+        <div id="staff-grid" class="staff-grid" aria-label="Trạng thái đội ngũ"></div>
+      </section>
+
+      <section class="dialogue-strip" aria-label="Lời nhắn từ nhân viên">
+        <span class="portrait dialogue-portrait character-avatar" data-character-id="tuan"><svg viewBox="0 0 80 80" aria-hidden="true"><use href="assets/staff-portraits.svg#tuan"></use></svg></span>
+        <div class="dialogue-copy"><strong id="dialogue-name">Tuấn · Quản lý ca</strong><p id="dialogue-text">Mình cùng chăm chút từng ly nhé.</p></div>
+        <button id="dialogue-action" class="text-button" type="button">Tuấn ơi</button>
+      </section>
+
+      <section class="orders-section" aria-label="Đơn hàng đang xử lý">
+        <div class="section-heading"><div><span class="eyebrow">NHỊP QUÁN</span><h2>Đơn đang chờ <span id="active-order-count" class="count-badge">0</span></h2></div><span id="arrival-label" class="arrival-note">Khách sẽ ghé sớm</span></div>
+        <div id="order-list" class="order-list"></div>
+      </section>
+
+      <section class="stock-glance" aria-label="Nguyên liệu cần chú ý">
+        <div class="stock-title"><span class="eyebrow">NHÌN NHANH KHO</span><button class="inline-link" type="button" data-panel="inventory">Quản lý kho <span aria-hidden="true">›</span></button></div>
+        <div id="stock-glance-list" class="stock-glance-list"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-dock" aria-label="Quản lý quán">
+      <button type="button" class="dock-item active" data-panel="orders" aria-current="page"><span class="dock-icon">⌂</span><small>Quán</small></button>
+      <button type="button" class="dock-item" data-panel="inventory"><span class="dock-icon">▤</span><small>Kho</small></button>
+      <button type="button" class="dock-item" data-panel="menu"><span class="dock-icon">◉</span><small>Menu</small></button>
+      <button type="button" class="dock-item" data-panel="quests"><span class="dock-icon">✳</span><small>Việc</small></button>
+      <button type="button" class="dock-item" data-panel="upgrades"><span class="dock-icon">↗</span><small>Nâng cấp</small></button>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="welcome-dialog" class="welcome-dialog title-screen">
+    <div class="welcome-cover"><img src="assets/neon-brew-logo.svg" alt="Logo Neon Brew: ly cà phê phát sáng cùng chữ Neon Brew"></div>
+    <div class="welcome-content"><span class="eyebrow">MỘT GÓC PHỐ · MỘT ÁNH ĐÈN</span><h2>Neon Brew</h2><p>Quán cà phê nhỏ đã sẵn sàng. Mình cùng đón vị khách đầu tiên nhé.</p>
+      <p class="creator-intro">Mình là <strong>Vũ Thanh Tuấn</strong>, là một nhà phát triển game độc lập (indie developer). Sau một thời gian dài ấp ủ và làm việc không ngừng nghỉ, hôm nay mình xin được chính thức giới thiệu đến cộng đồng tựa game mới nhất của mình mang tên: <strong>Neon Brew</strong>.</p>
+      <button id="continue-button" class="button button-primary" type="button" hidden>Tiếp tục ngày đang chơi <span aria-hidden="true">→</span></button>
+      <button id="new-game-button" class="button button-primary" type="button">Bắt đầu ngày đầu tiên <span aria-hidden="true">→</span></button>
+      <small class="welcome-footnote">Cà phê ngon. Nhịp quán vui.</small>
+    </div>
+  </dialog>
+
+  <dialog id="panel-dialog" class="sheet-dialog" aria-labelledby="panel-title">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div class="sheet-header"><div><span id="panel-eyebrow" class="eyebrow">QUẢN LÝ QUÁN</span><h2 id="panel-title">Kho nguyên liệu</h2></div><button class="icon-button close-button" type="button" data-action="close-panel" aria-label="Đóng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div id="panel-content" class="sheet-content"></div>
+  </dialog>
+
+  <dialog id="guide-dialog" class="guide-dialog">
+    <div class="guide-portrait-wrap"><span class="portrait guide-portrait character-avatar" data-character-id="tuan"><svg viewBox="0 0 80 80" aria-hidden="true"><use href="assets/staff-portraits.svg#tuan"></use></svg></span><span class="guide-spark">✦</span></div>
+    <span class="eyebrow">TUẤN · QUẢN LÝ CA</span><h2 id="guide-title">Chào bạn, đồng đội mới!</h2><p id="guide-copy">Nhân sẽ đón đơn, Nam pha chế, Thúy mang nước ra bàn còn Ly lo thanh toán. Mỗi người một việc, quán mình sẽ thật nhịp nhàng.</p>
+    <button id="guide-start-button" class="button button-primary" type="button">Mở cửa đón khách <span aria-hidden="true">→</span></button>
+  </dialog>
+
+  <dialog id="summary-dialog" class="summary-dialog">
+    <div class="summary-sun" aria-hidden="true">☼</div><span class="eyebrow">CA LÀM ĐÃ KHÉP LẠI</span><h2 id="summary-title">Một ngày thật khéo!</h2><p id="summary-copy">Quán mình đã cùng nhau chăm sóc những vị khách hôm nay.</p>
+    <div class="summary-stats"><div><small>ĐƠN HOÀN THÀNH</small><strong id="summary-orders">0</strong></div><div><small>DOANH THU</small><strong id="summary-revenue">0 ₫</strong></div><div><small>CHI PHÍ</small><strong id="summary-expenses">0 ₫</strong></div><div><small>THƯỞNG NHIỆM VỤ</small><strong id="summary-bonus">0 ₫</strong></div><div><small>KHÁCH RỜI ĐI</small><strong id="summary-failed">0</strong></div></div>
+    <div class="summary-net"><span>Tiền quán hiện có</span><strong id="summary-cash">0 ₫</strong></div>
+    <button id="next-day-button" class="button button-primary" type="button">Bắt đầu ngày mới <span aria-hidden="true">→</span></button>
+  </dialog>
+
+  <dialog id="confirm-dialog" class="confirm-dialog">
+    <span class="eyebrow">BẮT ĐẦU LẠI</span><h2>Mở một trang mới?</h2><p>Tiến trình hiện tại trên thiết bị này sẽ được thay bằng ngày đầu tiên.</p><div class="confirm-actions"><button class="button button-quiet" type="button" data-action="close-confirm">Ở lại quán</button><button class="button button-danger" type="button" data-action="confirm-reset">Bắt đầu mới</button></div>
+  </dialog>
+</body>
+</html>
